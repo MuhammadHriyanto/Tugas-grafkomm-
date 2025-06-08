@@ -290,5 +290,138 @@ namespace Tugas_grafkomm
             pictureBox1.Invalidate();
         }
 
+        private void button18_Click(object sender, EventArgs e)
+        {
+            currentCircleCenter.X -= 10;
+            pictureBox2.Invalidate();
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            currentCircleCenter.X += 10;
+            pictureBox2.Invalidate();
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            currentCircleCenter.Y -= 10;
+            pictureBox2.Invalidate();
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            currentCircleCenter.Y += 10;
+            pictureBox2.Invalidate();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            currentCircleRadius = (int)(currentCircleRadius * 1.1);
+            pictureBox2.Invalidate();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            currentCircleRadius = (int)(currentCircleRadius * 0.9);
+            pictureBox2.Invalidate();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            currentCircleCenter = originalCircleCenter;
+            currentCircleRadius = originalCircleRadius;
+            pictureBox2.Invalidate();
+        }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < currentSquarePoints.Length; i++)
+            {
+                currentSquarePoints[i].X -= 10;
+            }
+            pictureBox3.Invalidate();
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < currentSquarePoints.Length; i++)
+            {
+                currentSquarePoints[i].X += 10;
+            }
+            pictureBox3.Invalidate();
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < currentSquarePoints.Length; i++)
+            {
+                currentSquarePoints[i].Y -= 10;
+            }
+            pictureBox3.Invalidate();
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < currentSquarePoints.Length; i++)
+            {
+                currentSquarePoints[i].Y += 10;
+            }
+            pictureBox3.Invalidate();
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            float scaleFactor = 1.1f; // Skala 10% lebih besar
+            ApplySquareTransformation(scaleFactor, scaleFactor, 0); // Scale (sx, sy, angle)
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            float scaleFactor = 0.9f; // Skala 10% lebih besar
+            ApplySquareTransformation(scaleFactor, scaleFactor, 0); // Scale (sx, sy, angle)
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            ApplySquareTransformation(1, 1, 5);
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            ApplySquareTransformation(1, 1, -5);
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            currentSquarePoints = (Point[])originalSquarePoints.Clone();
+            squareMatrix.Reset();
+            pictureBox3.Invalidate();
+        }
+        private void ApplySquareTransformation(float scaleX, float scaleY, float angle)
+        {
+            // Tentukan titik tengah objek
+            float centerX = (currentSquarePoints[0].X + currentSquarePoints[2].X) / 2f;
+            float centerY = (currentSquarePoints[0].Y + currentSquarePoints[2].Y) / 2f;
+
+            squareMatrix.Translate(-centerX, -centerY, MatrixOrder.Append);
+            squareMatrix.Scale(scaleX, scaleY, MatrixOrder.Append);
+            squareMatrix.Rotate(angle, MatrixOrder.Append);
+            squareMatrix.Translate(centerX, centerY, MatrixOrder.Append);
+
+            PointF[] tempPoints = new PointF[currentSquarePoints.Length];
+            for (int i = 0; i < currentSquarePoints.Length; i++)
+            {
+                tempPoints[i] = new PointF(currentSquarePoints[i].X, currentSquarePoints[i].Y);
+            }
+
+            squareMatrix.TransformPoints(tempPoints);
+
+            for (int i = 0; i < currentSquarePoints.Length; i++)
+            {
+                currentSquarePoints[i] = new Point((int)Math.Round(tempPoints[i].X), (int)Math.Round(tempPoints[i].Y));
+            }
+
+            pictureBox3.Invalidate();
+        }
     }
 }

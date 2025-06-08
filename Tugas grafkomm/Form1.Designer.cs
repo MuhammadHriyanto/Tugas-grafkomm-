@@ -42,7 +42,6 @@
             button2 = new Button();
             button1 = new Button();
             groupBox2 = new GroupBox();
-            groupBox3 = new GroupBox();
             button10 = new Button();
             button11 = new Button();
             button12 = new Button();
@@ -52,6 +51,7 @@
             button16 = new Button();
             button17 = new Button();
             button18 = new Button();
+            groupBox3 = new GroupBox();
             button19 = new Button();
             button20 = new Button();
             button21 = new Button();
@@ -224,25 +224,6 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "LINGKARAN BRESSENHAM";
             // 
-            // groupBox3
-            // 
-            groupBox3.BackColor = SystemColors.ActiveCaption;
-            groupBox3.Controls.Add(button19);
-            groupBox3.Controls.Add(button20);
-            groupBox3.Controls.Add(button21);
-            groupBox3.Controls.Add(button22);
-            groupBox3.Controls.Add(button23);
-            groupBox3.Controls.Add(button24);
-            groupBox3.Controls.Add(button25);
-            groupBox3.Controls.Add(button26);
-            groupBox3.Controls.Add(button27);
-            groupBox3.Location = new Point(675, 279);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(296, 244);
-            groupBox3.TabIndex = 4;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "PERSEGI BRESSENHAM";
-            // 
             // button10
             // 
             button10.Location = new Point(143, 194);
@@ -251,6 +232,7 @@
             button10.TabIndex = 17;
             button10.Text = "reset";
             button10.UseVisualStyleBackColor = true;
+            button10.Click += button10_Click;
             // 
             // button11
             // 
@@ -278,6 +260,7 @@
             button13.TabIndex = 14;
             button13.Text = "perkecil";
             button13.UseVisualStyleBackColor = true;
+            button13.Click += button13_Click;
             // 
             // button14
             // 
@@ -287,6 +270,7 @@
             button14.TabIndex = 13;
             button14.Text = "perbesar";
             button14.UseVisualStyleBackColor = true;
+            button14.Click += button14_Click;
             // 
             // button15
             // 
@@ -296,6 +280,7 @@
             button15.TabIndex = 12;
             button15.Text = "bawah";
             button15.UseVisualStyleBackColor = true;
+            button15.Click += button15_Click;
             // 
             // button16
             // 
@@ -305,6 +290,7 @@
             button16.TabIndex = 11;
             button16.Text = "atas";
             button16.UseVisualStyleBackColor = true;
+            button16.Click += button16_Click;
             // 
             // button17
             // 
@@ -314,6 +300,7 @@
             button17.TabIndex = 10;
             button17.Text = "kanan";
             button17.UseVisualStyleBackColor = true;
+            button17.Click += button17_Click;
             // 
             // button18
             // 
@@ -323,6 +310,26 @@
             button18.TabIndex = 9;
             button18.Text = "kiri";
             button18.UseVisualStyleBackColor = true;
+            button18.Click += button18_Click;
+            // 
+            // groupBox3
+            // 
+            groupBox3.BackColor = SystemColors.ActiveCaption;
+            groupBox3.Controls.Add(button19);
+            groupBox3.Controls.Add(button20);
+            groupBox3.Controls.Add(button21);
+            groupBox3.Controls.Add(button22);
+            groupBox3.Controls.Add(button23);
+            groupBox3.Controls.Add(button24);
+            groupBox3.Controls.Add(button25);
+            groupBox3.Controls.Add(button26);
+            groupBox3.Controls.Add(button27);
+            groupBox3.Location = new Point(675, 279);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(296, 244);
+            groupBox3.TabIndex = 4;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "PERSEGI BRESSENHAM";
             // 
             // button19
             // 
@@ -332,6 +339,7 @@
             button19.TabIndex = 17;
             button19.Text = "reset";
             button19.UseVisualStyleBackColor = true;
+            button19.Click += button19_Click;
             // 
             // button20
             // 
@@ -341,6 +349,7 @@
             button20.TabIndex = 16;
             button20.Text = "putar kiri";
             button20.UseVisualStyleBackColor = true;
+            button20.Click += button20_Click;
             // 
             // button21
             // 
@@ -350,6 +359,7 @@
             button21.TabIndex = 15;
             button21.Text = "putar knn";
             button21.UseVisualStyleBackColor = true;
+            button21.Click += button21_Click;
             // 
             // button22
             // 
@@ -359,6 +369,7 @@
             button22.TabIndex = 14;
             button22.Text = "perkecil";
             button22.UseVisualStyleBackColor = true;
+            button22.Click += button22_Click;
             // 
             // button23
             // 
@@ -368,6 +379,7 @@
             button23.TabIndex = 13;
             button23.Text = "perbesar";
             button23.UseVisualStyleBackColor = true;
+            button23.Click += button23_Click;
             // 
             // button24
             // 
@@ -377,6 +389,7 @@
             button24.TabIndex = 12;
             button24.Text = "bawah";
             button24.UseVisualStyleBackColor = true;
+            button24.Click += button24_Click;
             // 
             // button25
             // 
@@ -386,6 +399,7 @@
             button25.TabIndex = 11;
             button25.Text = "atas";
             button25.UseVisualStyleBackColor = true;
+            button25.Click += button25_Click;
             // 
             // button26
             // 
@@ -395,6 +409,7 @@
             button26.TabIndex = 10;
             button26.Text = "kanan";
             button26.UseVisualStyleBackColor = true;
+            button26.Click += button26_Click;
             // 
             // button27
             // 
@@ -404,6 +419,7 @@
             button27.TabIndex = 9;
             button27.Text = "kiri";
             button27.UseVisualStyleBackColor = true;
+            button27.Click += button27_Click;
             // 
             // Form1
             // 
